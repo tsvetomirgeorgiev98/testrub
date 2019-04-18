@@ -55,7 +55,7 @@ app.get('/calendar', function(req, res) {
   res.render('pages/calendar');
 });
 
-app.get('/aboutuse', function(req, res) {
+app.get('/aboutus', function(req, res) {
   res.render('pages/aboutus');
 });
 
