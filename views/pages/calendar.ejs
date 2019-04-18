@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Calendar</title>
+    <link rel="icon" href="../../images/icon.png">
+
+    <link href='../../css/fullcalendar.min.css' rel='stylesheet' />
+    <link href='../../css/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+    <link rel="stylesheet" href='../../css/calendar.css'>
+    <!--theme links -->
+    <!--<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/blitzer/jquery-ui.css"> jquery theme file -->
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/sandstone/bootstrap.min.css"> <!-- bootstrap theme -->
+
+    <!-- theme files -->
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet"> <!-- bootstrap theme file -->
+    <!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>  jquery theme file-->
+
+    <!-- for button icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- woj's stuff start -->
+    <!-- <link rel="icon" href="icon.jpg"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="../../css/look.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <!-- woj's stuff end -->
+
+    <script src='../../js/jquery.min.js'></script>
+    <script src='../../js/moment.min.js'></script>
+    <script src='../../js/fullcalendar.min.js'></script>
+    <script src='../../js/calendarEvents.js'></script>
+    <script src='../../js/calendarCode.js'></script>
+
+
+
+  </head>
+  <body>
+    <!-- top nav bar -->
+    <div class="menubar" id="menu">
+        <b class="nohover">SmartCal</b>
+
+        <a class="space"> </a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="menuFunction()">&#9776;</a>
+        <a href="index.html">LOGOUT</a>
+        <a class="current">Calendar</a>
+
+
+    </div>
+    <!-- end of top nav bar-->
+
+
+    <!-- MAIN (Center website) -->
+    <div id='calendar'></div>
+
+
+    <!-- <button class="open-button" onclick="openForm()">Open Form</button> -->
+
+    <div class="form-popup" id="myForm">
+      <form action="/action_page.php" class="form-container">
+        <h1>Add Event</h1>
+
+        <label for="start" ><b>Start Time</b></label>
+        <input type="time"  name="start" id="start" required>
+        <p></p>
+        <label for="end" ><b>End Time</b></label>
+        <input type="time" name="end" id="end" required>
+
+        <input type="text" class="title" id="title" placeholder="Event Title">
+
+        <button type="button" class="btn" onclick="add()" >Add</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+  <!-- <div class="main">
+
+      <div id='calendar'></div>
+
+    </div>
+  -->
+    <!-- END MAIN -->
+
+
+    <!-- footer -->
+    <!--
+    <div class="footer" id="press">
+        <p> Copyright SmartCal </p>
+    </div>
+    -->
+    <script src="../../js/skrypt.js"></script>
+
+  </body>
+</html>

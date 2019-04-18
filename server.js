@@ -47,7 +47,7 @@ app.get('/', function(req, res) {
 
 //this is our login route, all it does is render the login.ejs page.
 app.get('/login', function(req, res) {
-  res.render('pages/login');
+  res.render('pages/index');
 });
 
 //this is our profile route, it takes in a username and uses that to search the database for a specific user
