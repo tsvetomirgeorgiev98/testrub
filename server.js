@@ -50,6 +50,10 @@ app.get('/', function(req, res) {
 app.get('/index', function(req, res) {
   res.render('pages/index');
 });
+
+app.get('/calendar', function(req, res) {
+  res.render('pages/calendar');
+});
 //
 // //this is our profile route, it takes in a username and uses that to search the database for a specific user
 // app.get('/profile', function(req, res) {
