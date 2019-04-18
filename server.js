@@ -67,6 +67,9 @@ app.get('/profile', function(req, res) {
       user: result
     })
   });
+  app.get('/calendar', function(req, res) {
+    res.render('pages/calendar');
+  });
 
 });
 //adduser route simply draws our adduser page
