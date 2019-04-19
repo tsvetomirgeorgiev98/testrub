@@ -6,7 +6,7 @@ function addToArray(event){
     end: event.end
   }
 
-  eventsArray[1] =  obj;
+  //eventsArray[1] =  obj;
 }
 var eventsArray = [
   {
