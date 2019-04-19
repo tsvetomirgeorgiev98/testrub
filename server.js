@@ -75,26 +75,26 @@ app.get('/register', function(req, res) {
 });
 
 //this is our profile route, it takes in a username and uses that to search the database for a specific user
-// app.get('/profile', function(req, res) {
-//   if(!req.session.loggedin){res.redirect('/login');return;}
-//   //get the requested user based on their username, eg /profile?username=dioreticllama
-//   var uname = req.query.username;
-//   //this query finds the first document in the array with that username.
-//   //Because the username value sits in the login section of the user data we use login.username
-//   db.collection('people').findOne({
-//     "login.username": uname
-//   }, function(err, result) {
-//     if (err) throw err;
-//     //console.log(uname+ ":" + result);
-//     //finally we just send the result to the user page as "user"
-//     res.render('pages/profile', {
-//       user: result
-//     })
-//   });
-//
-//
-//
-// });
+app.get('/profile', function(req, res) {
+  if(!req.session.loggedin){res.redirect('/login');return;}
+  //get the requested user based on their username, eg /profile?username=dioreticllama
+  var uname = req.query.username;
+  //this query finds the first document in the array with that username.
+  //Because the username value sits in the login section of the user data we use login.username
+  db.collection('people').findOne({
+    "login.username": uname
+  }, function(err, result) {
+    if (err) throw err;
+    //console.log(uname+ ":" + result);
+    //finally we just send the result to the user page as "user"
+    res.render('pages/profile', {
+      user: result
+    })
+  });
+
+
+
+});
 
 //logour route cause the page to Logout.
 //it sets our session.loggedin to false and then redirects the user to the login
