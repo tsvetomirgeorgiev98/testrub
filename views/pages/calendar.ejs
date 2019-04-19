@@ -9,7 +9,18 @@
   <body>
     <% include ../partials/loogedinheader %>
 
+    <% events.forEach(function(event) { %>
+      var startTime = event.start;
+      var endTime = event.start;
+      var title = event.title;
 
+      var obj = {
+        title : title,
+        start : startTime,
+        end : endTime
+      };
+      $("#calendar").fullCalendar('renderEvent', obj, true);
+    <% }); %>
 
 
     <!-- MAIN (Center website) -->

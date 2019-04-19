@@ -59,7 +59,7 @@ app.get('/calendar', function(req, res) {
     //console.log(uname+ ":" + result);
     //finally we just send the result to the user page as "user"
     res.render('pages/calendar', {
-      event: result
+      events: result
     })
   });
   // res.render('pages/calendar');
