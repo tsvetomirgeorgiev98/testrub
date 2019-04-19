@@ -10,16 +10,14 @@ function addToArray(event){
 }
 var eventsArray = [
   {
-    id: 1,
     title: "test",
     start: "2019-04-05T16:00:00",
     end: "2019-04-05T17:00:00"
   },
   {
-    id: 1,
     title: "test2",
     start: "2019-04-19T16:00:00",
     end: "2019-04-19T17:00:00",
-    name: "Tsvet"
+    username: "Tsvet"
   }
 ]
