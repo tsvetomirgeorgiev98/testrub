@@ -8,18 +8,11 @@
   </head>
   <body>
     <% include ../partials/loogedinheader %>
-    <!-- top nav bar -->
-    <!-- <div class="menubar" id="menu">
-        <b class="nohover">SmartCal</b>
 
-        <a class="space"> </a>
-        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="menuFunction()">&#9776;</a>
-        <a href="index.html">LOGOUT</a>
-        <a class="current">Calendar</a>
+    <% events.forEach(function(event) { %>
+      $("#calendar").fullCalendar('renderEvent', obj, true)
 
-
-    </div> -->
-    <!-- end of top nav bar-->
+    <% }); %>
 
 
     <!-- MAIN (Center website) -->

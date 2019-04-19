@@ -53,11 +53,16 @@ app.get('/index', function(req, res) {
 
 app.get('/calendar', function(req, res) {
   if(!req.session.loggedin){res.redirect('/index');return;}
-  db.collection('events').find().forEach(function(err,res){
-    if(err) throw err;
-    console.log("in");
-    console.log(res.title);
-  })
+  db.collection('events').findOne({
+    "login.username": uname
+  }, function(err, result) {
+    if (err) throw err;
+
+
+    res.render('pages/calendar', {
+      event: result
+    })
+  });
   res.render('pages/calendar');
 });
 
