@@ -53,18 +53,11 @@ app.get('/index', function(req, res) {
 
 app.get('/calendar', function(req, res) {
   if(!req.session.loggedin){res.redirect('/index');return;}
-  db.collection('events').findOne({
-    "login.username": uname
-  }, function(err, result) {
-    if (err) throw err;
-
-
-    res.render('pages/calendar', {
-      event: result
+  db.collection('events').find(function(err, res){
+    res.forEach(function(result){
+      console.log(result);
     })
-  });
-  res.render('pages/calendar');
-});
+  })
 
 app.get('/aboutus', function(req, res) {
   res.render('pages/aboutus');
