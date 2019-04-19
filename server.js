@@ -53,10 +53,9 @@ app.get('/index', function(req, res) {
 
 app.get('/calendar', function(req, res) {
   if(!req.session.loggedin){res.redirect('/index');return;}
-  db.collection.find('events').forEach(function(err, doc) {
-  // handle
-  console.log(doc.title);
-});
+  mongojs('eventHolder').db.collection('events').find(function(err, docs){
+    console.log(docs.title);
+  })
   res.render('pages/calendar');
 });
 
@@ -90,16 +89,7 @@ app.get('/profile', function(req, res) {
 
 
 });
-//adduser route simply draws our adduser page
-app.get('/adduser', function(req, res) {
-  if(!req.session.loggedin){res.redirect('/login');return;}
-  res.render('pages/adduser')
-});
-//remuser route simply draws our remuser page
-app.get('/remuser', function(req, res) {
-  if(!req.session.loggedin){res.redirect('/login');return;}
-  res.render('pages/remuser')
-});
+
 //logour route cause the page to Logout.
 //it sets our session.loggedin to false and then redirects the user to the login
 app.get('/logout', function(req, res) {
