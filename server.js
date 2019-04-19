@@ -53,8 +53,28 @@ app.get('/index', function(req, res) {
 
 app.get('/calendar', function(req, res) {
   if(!req.session.loggedin){res.redirect('/index');return;}
-  userEvents = db.collection('events').find().toArray();
-  console.log(userEvents);
+  db.collection('events').find().toArray(function(err, result) {
+    if (err) throw err;
+    //the result of the query is sent to the users page as the "users" array
+    result.forEach(function(event){
+      var startTime = result.start;
+      var endTime = result.end;
+      var title = result.title;
+      var date = currentDate;
+
+    })
+    // res.render('pages/index', {
+    //   users: result
+    // })
+
+    var obj = {
+      title : title,
+      start : startTime,
+      end : endTime
+    };
+
+    $("#calendar").fullCalendar('renderEvent', obj, true);
+  });
   res.render('pages/calendar');
 });
 
