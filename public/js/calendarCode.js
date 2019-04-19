@@ -49,9 +49,9 @@
             };
 
             var datatostore = {
-              "title" : title,
-              "start" : startTime,
-              "end" : endTime
+              title : title,
+              start : startTime,
+              end : endTime
             }
             // adding title title, start and end time to that variable(the date and start/end time need to be in the same variable)
             //checking if date is valid
