@@ -53,15 +53,13 @@ app.get('/index', function(req, res) {
 
 app.get('/calendar', function(req, res) {
   if(!req.session.loggedin){res.redirect('/index');return;}
-  // db.collection('events').findOne({"username":uname}, function(err, result) {
-  //   if (err) throw err;//if there is an error, throw the error
-  //   //if there is no result, redirect the user back to the login system as that username must not exist
-  //   if(!result){res.redirect('/login');return}
-  //   //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
-  //   if(result.login.password == pword){ req.session.loggedin = true; res.redirect('/') }
-  //   //otherwise send them back to login
-  //   else{res.redirect('/login')}
-  // });
+  db.collection('events').find().toArray(function(err, result) {
+    if (err) throw err;
+    var res = result;
+    for each(var r in res){
+      console.log(res.title);
+    }
+  });
   res.render('pages/calendar');
 });
 
