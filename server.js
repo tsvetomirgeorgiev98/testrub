@@ -5,7 +5,7 @@ const express = require('express'); //npm install express
 const session = require('express-session'); //npm install express-session
 const bodyParser = require('body-parser'); //npm install body-parser
 const app = express();
-
+var currentUser;
 app.use(express.static('public'));
 //this tells express we are using sesssions. These are variables that only belong to one user of the site at a time.
 app.use(session({ secret: 'example' }));
@@ -53,7 +53,15 @@ app.get('/index', function(req, res) {
 
 app.get('/calendar', function(req, res) {
   if(!req.session.loggedin){res.redirect('/index');return;}
-
+  db.collection('events').findOne({"username":uname}, function(err, result) {
+    if (err) throw err;//if there is an error, throw the error
+    //if there is no result, redirect the user back to the login system as that username must not exist
+    if(!result){res.redirect('/login');return}
+    //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
+    if(result.login.password == pword){ req.session.loggedin = true; res.redirect('/') }
+    //otherwise send them back to login
+    else{res.redirect('/login')}
+  });
   res.render('pages/calendar');
 });
 
@@ -114,7 +122,7 @@ app.post('/dologin', function(req, res) {
     //if there is no result, redirect the user back to the login system as that username must not exist
     if(!result){res.redirect('/index');return}
     //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
-    if(result.login.password == pword){ req.session.loggedin = true; res.redirect('/calendar') }
+    if(result.login.password == pword){ req.session.loggedin = true; currentUser = result.login.password ; console.log(currentUser);;res.redirect('/calendar') }
     //otherwise send them back to login
     else{res.redirect('/index')}
   });
