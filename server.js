@@ -54,11 +54,11 @@ app.get('/index', function(req, res) {
 app.get('/calendar', function(req, res) {
   if(!req.session.loggedin){res.redirect('/index');return;}
 
-  db('eventHolder').collection('events').find().toArray(function(err, result) {
+  db.collection('events').find().toArray(function(err, result) {
     if (err) throw err;
     //the result of the query is sent to the users page as the "users" array
-    var test = result;
-    console.log(test);
+
+    console.log(result);
   });
   res.render('pages/calendar');
   })
