@@ -53,13 +53,9 @@ app.get('/index', function(req, res) {
 
 app.get('/calendar', function(req, res) {
   if(!req.session.loggedin){res.redirect('/index');return;}
-  db.collection('events').find().toArray(function(err, result) {
-    if (err) throw err;
-    var res = result;
-    for each (var item in res) {
-      console.log(res.title);
-    }
-  });
+  db.collection('events').find().forEach(function(res){
+    console.log(res.title);
+  })
   res.render('pages/calendar');
 });
 
