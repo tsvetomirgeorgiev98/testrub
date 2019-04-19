@@ -61,7 +61,7 @@ app.get('/aboutus', function(req, res) {
 });
 
 app.get('/register', function(req, res) {
-  if(req.session.loggedin){res.redirect('/index');return;}
+  if(req.session.loggedin){res.redirect('/logout');return;}
   res.render('pages/register');
 });
 
