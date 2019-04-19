@@ -54,6 +54,7 @@ app.get('/index', function(req, res) {
 app.get('/calendar', function(req, res) {
   if(!req.session.loggedin){res.redirect('/index');return;}
   db.collection('events').find().forEach(function(res){
+    console.log("in");
     console.log(res.title);
   })
   res.render('pages/calendar');
