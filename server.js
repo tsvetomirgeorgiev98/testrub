@@ -54,9 +54,15 @@ app.get('/index', function(req, res) {
 app.get('/calendar', function(req, res) {
   if(!req.session.loggedin){res.redirect('/index');return;}
 
-  var test = db.events.find().toArray();
-  console.log(test);
-  res.render('pages/calendar');
+  db.collection('events').find(function(err, result) {
+    if (err) throw err;
+    //console.log(uname+ ":" + result);
+    //finally we just send the result to the user page as "user"
+    res.render('pages/calendar', {
+      event: result
+    })
+  });
+  // res.render('pages/calendar');
   })
 
 app.get('/aboutus', function(req, res) {
