@@ -53,6 +53,14 @@ app.get('/index', function(req, res) {
 
 app.get('/calendar', function(req, res) {
   if(!req.session.loggedin){res.redirect('/index');return;}
+
+  db.collection('events').find().toArray(function(err, result) {
+    if (err) throw err;
+    //the result of the query is sent to the users page as the "users" array
+    for each(var r in result){
+      $("#calendar").fullCalendar('renderEvent', r, true)
+    }
+  });
   res.render('pages/calendar');
   })
 
