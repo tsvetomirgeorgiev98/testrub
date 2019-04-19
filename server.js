@@ -5,7 +5,7 @@ const express = require('express'); //npm install express
 const session = require('express-session'); //npm install express-session
 const bodyParser = require('body-parser'); //npm install body-parser
 const app = express();
-var mongojs = require('mongojs')
+
 app.use(express.static('public'));
 //this tells express we are using sesssions. These are variables that only belong to one user of the site at a time.
 app.use(session({ secret: 'example' }));
@@ -53,9 +53,7 @@ app.get('/index', function(req, res) {
 
 app.get('/calendar', function(req, res) {
   if(!req.session.loggedin){res.redirect('/index');return;}
-  mongojs('eventHolder').db.collection('events').find(function(err, docs){
-    console.log(docs.title);
-  })
+
   res.render('pages/calendar');
 });
 
