@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
 app.set('view engine', 'ejs');
 
 var db;
-var userEvents;
+var userEvents = [];
 
 //this is our connection to the mongo db, ts sets the variable db as our database
 MongoClient.connect(url, function(err, database) {
