@@ -1,12 +1,12 @@
 
-function addToArray(event){
-  var obj = {
-    title: event.title,
-    start: event.start,
-    end: event.end
-  }
-
-  eventsArray[1] =  obj;
+// function addToArray(event){
+//   var obj = {
+//     title: event.title,
+//     start: event.start,
+//     end: event.end
+//   }
+//
+//   eventsArray[1] =  obj;
 }
 var eventsArray = [
   {
