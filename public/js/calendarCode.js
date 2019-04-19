@@ -48,18 +48,23 @@
               end : endTime
             };
 
-            var datastore = {
-              "title" : title,
-              "start" : startTime,
-              "end" : endTime
-            }
-            alert(datastore);
+            // var datastore = {
+            //   "title" : title,
+            //   "start" : startTime,
+            //   "end" : endTime
+            // }
+            // alert(datastore);
+            // alert(obj);
             // adding title title, start and end time to that variable(the date and start/end time need to be in the same variable)
 
             //checking if date is valid
             if (checkDates(startTime, endTime)) {
               //adding the event variable to the eventsArray
-              db.collection('people').save(datatostore, function(err, result) {
+              db.collection('people').save({
+                "title" : title,
+                "start" : startTime,
+                "end" : endTime
+              }, function(err, result) {
                 if (err) throw err;
                 $("#calendar").fullCalendar('renderEvent', obj, true);
                 console.log('saved to database')
