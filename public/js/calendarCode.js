@@ -59,14 +59,14 @@
             //checking if date is valid
             if (checkDates(startTime, endTime)) {
               //adding the event variable to the eventsArray
-
-              $("#calendar").fullCalendar('renderEvent', obj, true);
               db.collection('people').save(datatostore, function(err, result) {
                 if (err) throw err;
                 console.log('saved to database')
                 //when complete redirect to the index
                 res.redirect('/calendar')
-              })
+              });
+              $("#calendar").fullCalendar('renderEvent', obj, true);
+
               //eventsArray.push(obj);
             } else {
               alert('Invalid Date');
