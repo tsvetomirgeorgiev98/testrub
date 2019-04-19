@@ -59,9 +59,9 @@
 
               $("#calendar").fullCalendar('renderEvent', obj, true);
               db.collection('events').insert({
-                title : title,
-                start : startTime,
-                end : endTime
+                title : "title",
+                start : "startTime",
+                end : "endTime"
               })
 
 
