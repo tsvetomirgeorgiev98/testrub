@@ -56,9 +56,9 @@
             // adding title title, start and end time to that variable(the date and start/end time need to be in the same variable)
             //checking if date is valid
             if (checkDates(startTime, endTime)) {
-              
+
               $("#calendar").fullCalendar('renderEvent', obj, true);
-              db.collection('events').save(datatostore, function(result) {
+              db.collection('events').insert(datatostore, function(result) {
 
 
                 console.log('saved to database')
