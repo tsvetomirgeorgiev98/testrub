@@ -157,7 +157,7 @@ app.post('/delete', function(req, res) {
 
 app.post('/adduser', function(req, res) {
   //check we are logged in
-  if(!req.session.loggedin){res.redirect('/index');return;}
+  if(!req.session.loggedin){res.redirect('/index');console.log('test first');return;}
 
   //we create the data string from the form components that have been passed in
 
@@ -170,7 +170,7 @@ var datatostore = {
 
 //once created we just run the data string against the database and all our new data will be saved/
   db.collection('people').save(datatostore, function(err, result) {
-    console.log('test')
+    console.log('test');
     if (err) throw err;
     console.log('saved to database')
     //when complete redirect to the index
