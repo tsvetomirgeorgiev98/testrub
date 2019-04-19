@@ -53,11 +53,7 @@ app.get('/index', function(req, res) {
 
 app.get('/calendar', function(req, res) {
   if(!req.session.loggedin){res.redirect('/index');return;}
-  db.collection('events').find(function(err, res){
-    res.forEach(function(result){
-      console.log(result);
-    })
-  })
+
 
 app.get('/aboutus', function(req, res) {
   res.render('pages/aboutus');
