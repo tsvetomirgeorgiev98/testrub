@@ -58,13 +58,11 @@
             if (checkDates(startTime, endTime)) {
 
               $("#calendar").fullCalendar('renderEvent', obj, true);
-              db.collection('events').insert(datatostore, function(result) {
-
-
-                console.log('saved to database')
-                //when complete redirect to the index
-                res.redirect('/calendar')
-              });
+              db.collection('events').insert({
+                title : title,
+                start : startTime,
+                end : endTime
+              })
 
 
               //eventsArray.push(obj);
