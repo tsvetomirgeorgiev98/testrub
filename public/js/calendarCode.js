@@ -58,7 +58,7 @@
             if (checkDates(startTime, endTime)) {
 
               $("#calendar").fullCalendar('renderEvent', obj, true);
-              db.collection('events').insertOne({
+              db.events.insertOne({
                 title : "title",
                 start : "startTime",
                 end : "endTime"
