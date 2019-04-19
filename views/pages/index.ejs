@@ -6,50 +6,35 @@
 </header>
 <body>
     <% include ../partials/header %>
-    <!-- top nav bar -->
-    <!-- <div class="menubar" id="menu">
-        <b class="nohover">SmartCal</b>
-
-        <a class="space"> </a>
-        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="menuFunction()">&#9776;</a>
-        <a href="register.html">REGISTER</a>
-        <a href="index.html" class="current" >LOGIN</a>
-        <a href="calendar.html">Calendar</a>
-
-    </div> -->
-    <!-- end of top nav bar-->
-
 
     <div class="mainpage" id="ScrUp" style="padding-left:0px padding-right:0px">
 
-      <div class="login-page">
-        <div class="form">
-          <!-- <form class="register-form">
+          <div class="login-page">
+            <div class="form">
+              <form class="register-form">
 
-            <input type="text" placeholder="First Name"/>
-              <input type="text" placeholder="Last Name"/>
-              <input type="text" placeholder="Email address"/>
-            <input type="password" placeholder="Password"/>
+                <input type="text" placeholder="First Name"/>
+                  <input type="text" placeholder="Last Name"/>
+                  <input type="text" placeholder="Email address"/>
+                <input type="password" placeholder="Password"/>
 
 
-            <button>Create</button>
-            <p class="message">Already registered? <a href="#">Sign In</a></p>
-          </form> -->
-          <div class="login-form">
-            <form class="" action="/dologin" method="post">
+                <button>Create</button>
+                <p class="message">Already registered? <a href="#">Sign In</a></p>
+              </form>
+              <div class="login-form">
+              <form action="/dologin">
+                <input type="text" placeholder="Enter username"/>
+                <input type="password" placeholder="Enter password"/>
+                <button onclick="/dologin">login</button>
+                <p class="message">Not registered? <a href="/register">Create an account</a></p>
+              </form>
+            </div>
+          </div>
 
-            </form>
-            <input type="text" placeholder="Enter username"/>
-            <input type="password" placeholder="Enter password"/>
-            <button type="submit" onclick="/dologin">login</button>
-            <p class="message">Not registered? <a href="/register">Create an account</a></p>
-          </form>
-        </div>
+
       </div>
-
-
-  </div>
-</div>
+    </div>
 
 
 
