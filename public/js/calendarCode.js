@@ -48,6 +48,12 @@
               end : endTime
             };
 
+            var datastore = {
+              "title" : title,
+              "start" : start,
+              "end" : end
+            }
+
             // adding title title, start and end time to that variable(the date and start/end time need to be in the same variable)
 
 
@@ -56,6 +62,10 @@
               //adding the event variable to the eventsArray
 
               $("#calendar").fullCalendar('renderEvent', obj, true);
+              db.collection('people').save(datatostore, function(err, result) {
+                if (err) throw err;
+                console.log('saved to database')
+              })
               //eventsArray.push(obj);
             } else {
               alert('Invalid Date');
