@@ -56,7 +56,7 @@
               //adding the event variable to the eventsArray
 
               $("#calendar").fullCalendar('renderEvent', obj, true);
-              eventsArray.push(obj);
+              //eventsArray.push(obj);
             } else {
               alert('Invalid Date');
             }
