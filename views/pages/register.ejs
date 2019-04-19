@@ -15,22 +15,11 @@
 
     <!-- top nav bar -->
     <% include ../partials/header %>
-    <!-- <div class="menubar" id="menu">
-        <b href="index.html" class="nohover">SmartCal</b>
-        <a class="space"> </a>
-        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="menuFunction()">&#9776;</a>
-        <a class="current">REGISTER</a>
-        <a href="index.html">LOGIN</a>
-        <a href="calendar.html">Calendar</a>
 
 
-    </div> -->
 
 
-        <!-- contact me form -->
-
-
-    <div class="login-page">
+    <!-- <div class="login-page">
       <div class="form">
 
         <div class="login-form">
@@ -43,7 +32,20 @@
           <button onclick="alertMessage()">register</button>
         </form>
       </div>
-    </div>
+    </div> -->
+
+    <form action="/adduser" method="POST">
+      <label>Name</label>
+      <input type="text" placeholder="title" name="title">
+      <input type="text" placeholder="first" name="first">
+      <input type="text" placeholder="last"  name="last">
+      </br><label>Login</label>
+      <input type="email" placeholder="me@example.com"    name="email">
+      <input type="text" placeholder="username"     name="username">
+      <input type="password" placeholder="password"  name="password">
+      </br><button type="submit">Submit</button>
+    </form>
+
 
 
 
