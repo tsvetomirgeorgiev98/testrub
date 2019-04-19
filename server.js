@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
 app.set('view engine', 'ejs');
 
 var db;
-
+var userEvents;
 
 //this is our connection to the mongo db, ts sets the variable db as our database
 MongoClient.connect(url, function(err, database) {
@@ -53,6 +53,8 @@ app.get('/index', function(req, res) {
 
 app.get('/calendar', function(req, res) {
   if(!req.session.loggedin){res.redirect('/index');return;}
+  userEvents = db.collection('events').find().toArray();
+  console.log(userEvents);
   res.render('pages/calendar');
 });
 
