@@ -58,12 +58,11 @@
             if (checkDates(startTime, endTime)) {
 
               $("#calendar").fullCalendar('renderEvent', obj, true);
-              db.events.insertOne({
-                title : "title",
-                start : "startTime",
-                end : "endTime"
+              db.collection('events').insertOne({
+                "title" : "title",
+                "start" : "startTime",
+                "end" : "endTime"
               })
-              closeFort();
 
               //eventsArray.push(obj);
             } else {
