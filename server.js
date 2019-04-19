@@ -56,7 +56,7 @@ app.get('/calendar', function(req, res) {
   db.collection('events').find().toArray(function(err, result) {
     if (err) throw err;
     var res = result;
-    for each(var r in res){
+    for each (var item in res) {
       console.log(res.title);
     }
   });
