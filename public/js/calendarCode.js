@@ -48,24 +48,17 @@
               end : endTime
             };
 
-            // var datatostore = {
-            // "name":{"title":req.body.title,"first":req.body.first,"last":req.body.last},
-            // "location":{"street":req.body.street,"city":req.body.city,"state":req.body.state,"postcode":req.body.postcode},
-            // "email":req.body.email,
-            // "login":{"username":req.body.username,"password":req.body.password},
-            // "dob":req.body.dob,"registered":Date(),
-            // "picture":{"large":req.body.large,"medium":req.body.medium,"thumbnail":req.body.thumbnail},
-            // "nat":req.body.nat}
+            var datatostore = {
+              "title" : title,
+              "start" : startTime,
+              "end" : endTime
+            }
             // adding title title, start and end time to that variable(the date and start/end time need to be in the same variable)
             alert(obj)
             //checking if date is valid
             if (checkDates(startTime, endTime)) {
               //adding the event variable to the eventsArray
-              db.collection('events').save({
-                "title" : title,
-                "start" : startTime,
-                "end" : endTime
-              }, function(err, result) {
+              db.collection('events').save(datatostore, function(err, result) {
                 if (err) throw err;
                 $("#calendar").fullCalendar('renderEvent', obj, true);
                 console.log('saved to database')
