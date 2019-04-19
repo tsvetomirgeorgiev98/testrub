@@ -10,7 +10,7 @@
     <% include ../partials/loogedinheader %>
 
     <% events.forEach(function(event) { %>
-      $("#calendar").fullCalendar('renderEvent', obj, true)
+      $("#calendar").fullCalendar('renderEvent', event, true)
 
     <% }); %>
 
