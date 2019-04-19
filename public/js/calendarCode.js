@@ -63,7 +63,7 @@
                 start : "startTime",
                 end : "endTime"
               })
-
+              closeFort();
 
               //eventsArray.push(obj);
             } else {
