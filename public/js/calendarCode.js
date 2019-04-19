@@ -56,7 +56,7 @@
 
             // adding title title, start and end time to that variable(the date and start/end time need to be in the same variable)
 
-            console.log(datastore);
+            console.log(datastore.toString());
             //checking if date is valid
             if (checkDates(startTime, endTime)) {
               //adding the event variable to the eventsArray
