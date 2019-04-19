@@ -52,7 +52,7 @@ app.get('/index', function(req, res) {
 });
 
 app.get('/calendar', function(req, res) {
-  if(!req.session.loggedin){res.redirect('/login');return;}
+  if(!req.session.loggedin){res.redirect('/index');return;}
   res.render('pages/calendar');
 });
 
@@ -61,7 +61,7 @@ app.get('/aboutus', function(req, res) {
 });
 
 app.get('/register', function(req, res) {
-  if(req.session.loggedin){res.redirect('/login');return;}
+  if(req.session.loggedin){res.redirect('/index');return;}
   res.render('pages/register');
 });
 
