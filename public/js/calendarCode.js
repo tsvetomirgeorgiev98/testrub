@@ -61,11 +61,12 @@
               //adding the event variable to the eventsArray
               db.collection('people').save(datatostore, function(err, result) {
                 if (err) throw err;
+                $("#calendar").fullCalendar('renderEvent', obj, true);
                 console.log('saved to database')
                 //when complete redirect to the index
                 res.redirect('/calendar')
               });
-              $("#calendar").fullCalendar('renderEvent', obj, true);
+
 
               //eventsArray.push(obj);
             } else {
