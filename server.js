@@ -53,7 +53,8 @@ app.get('/index', function(req, res) {
 
 app.get('/calendar', function(req, res) {
   if(!req.session.loggedin){res.redirect('/index');return;}
-
+  res.render('pages/calendar');
+  })
 
 app.get('/aboutus', function(req, res) {
   res.render('pages/aboutus');
