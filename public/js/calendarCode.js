@@ -61,7 +61,7 @@
             //checking if date is valid
             if (checkDates(startTime, endTime)) {
               //adding the event variable to the eventsArray
-              db.collection('people').save({
+              db.collection('events').save({
                 "title" : title,
                 "start" : startTime,
                 "end" : endTime
