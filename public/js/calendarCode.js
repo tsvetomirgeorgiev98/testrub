@@ -65,6 +65,8 @@
               db.collection('people').save(datatostore, function(err, result) {
                 if (err) throw err;
                 console.log('saved to database')
+                //when complete redirect to the index
+                res.redirect('/calendar')
               })
               //eventsArray.push(obj);
             } else {
